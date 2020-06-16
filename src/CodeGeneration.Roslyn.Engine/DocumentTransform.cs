@@ -110,7 +110,7 @@ namespace CodeGeneration.Roslyn.Engine
             var compilationUnit =
                 SyntaxFactory.CompilationUnit(
                         SyntaxFactory.List(emittedExterns),
-                        SyntaxFactory.List(emittedUsings),
+                        SyntaxFactory.List(emittedUsings.Distinct()),
                         SyntaxFactory.List(emittedAttributeLists),
                         SyntaxFactory.List(emittedMembers))
                     .WithLeadingTrivia(SyntaxFactory.Comment(GeneratedByAToolPreamble))
